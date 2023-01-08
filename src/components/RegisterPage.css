@@ -1,0 +1,13 @@
+.Register{
+    background-image : url("https://images4.alphacoders.com/288/288218.jpg");
+    height: 632px;
+    background-size: cover;
+}
+
+.Heading{
+    font-weight:bold;
+    display:flex;
+    justify-content: center;
+    font-size:30px;
+    margin-bottom:110%;
+}

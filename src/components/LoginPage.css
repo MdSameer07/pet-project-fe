@@ -1,0 +1,13 @@
+.Login{
+    background-image : url("https://wallpaperaccess.com/full/240159.jpg");
+    height: 632px;
+    background-size: cover;
+}
+
+.Heading{
+    font-weight:bold;
+    display:flex;
+    justify-content: center;
+    font-size:30px;
+    margin-top:5%;
+}

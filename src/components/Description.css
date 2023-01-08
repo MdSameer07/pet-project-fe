@@ -1,0 +1,33 @@
+.description{
+    border:1px solid red;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    margin-bottom:5%;
+    background-color: blanchedalmond;
+}
+
+h3{
+    font-size:20px;
+    color:Black;
+}
+
+.stylename{
+    display:flex;
+    justify-content: center;
+}
+
+.stylerating{
+    display:flex;
+    justify-content: center;
+    margin-top:-7%;
+}
+
+.rating{
+    color:black;
+}
+
+h4{
+    font-size:17px;
+    color:darkgreen;
+}

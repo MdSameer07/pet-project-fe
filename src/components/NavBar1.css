@@ -1,0 +1,50 @@
+.Nav{
+    display:flex;
+    background-color: blanchedalmond;
+    align-items:center;
+    height:100px;
+    padding-left:4%;
+}
+.Initial{
+    width:6%;
+}
+
+.Initial > img{
+    width:100%;
+}
+
+.Middle1{
+    width:17%;
+    display:flex;
+    margin-left:7%;
+    justify-content: space-between;
+    font-size:20px;
+    color:blue;
+    font-weight: bold;
+}
+
+.Middle1 :hover{
+    color:red;
+    cursor:pointer;
+}
+
+.Final{
+    width:17%;
+    display:flex;
+    margin-left:47%;
+    margin-top:1%;
+    justify-content: space-between;
+    font-size:20px;
+    font-weight:bold;
+    color:red;
+}
+
+.Final :hover{
+    color:blue;
+    cursor:pointer;
+}
+
+.Initial,.Middle1,.Final{
+    border:1px solid black;
+    margin-top:1.7%;
+}
