@@ -1,0 +1,22 @@
+.main{
+    font-size:80px;
+    font-weight:bold;
+    border:1px solid blue;
+    width:70%;
+    margin-top:3%;
+    margin-left:4%;
+}
+
+.outer{
+    border:1px solid red;
+    background-color: cyan;
+}
+
+.side{
+    width:40%;
+    font-size:21px;
+    border:1px solid purple;
+    margin-left:4%;
+    margin-top:-2%;
+    margin-bottom:3%;
+}
