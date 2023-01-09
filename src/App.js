@@ -4,11 +4,7 @@ import {Body} from './components/Body'
 import {Routes,Route} from 'react-router-dom'
 import {LoginPage} from './components/LoginPage'
 import {RegisterPage} from './components/RegisterPage'
-import { ThrillerMovies } from './components/ThrillerMovies';
-import {HorrorMovies} from './components/HorrorMovies';
-import { ActionMovies } from './components/ActionMovies';
-import { ComedyMovies } from './components/ComedyMovies';
-import { RomanceMovies } from './components/RomanticMovies';
+import { GenrePages } from './components/GenrePages';
 import { Movies } from './components/Movies';
 import { EachMovie } from './components/EachMovie';
 import {QueryClientProvider,QueryClient} from 'react-query'
@@ -24,18 +20,10 @@ function App() {
         <Route path = '/' element = {<Body/>}/>
         <Route path = '/login' element = {<LoginPage/>}/>
         <Route path = '/register' element = {<RegisterPage/>}/>
-        <Route path = '/thriller' element = {<ThrillerMovies/>}/>
-        <Route path = '/horror' element = {<HorrorMovies/>}/>
-        <Route path = '/action' element = {<ActionMovies/>}/>
-        <Route path = '/comedy' element = {<ComedyMovies/>}/>
-        <Route path = '/romance' element = {<RomanceMovies/>}/>
         <Route path = '/movies' element = {<Movies/>}/>
-        <Route path = 'movies/:name' element = {<EachMovie/>}/>
-        <Route path = 'thriller/:name' element = {<EachMovie/>}/>
-        <Route path = 'romantic/:name' element = {<EachMovie/>}/>
-        <Route path = 'horror/:name' element = {<EachMovie/>}/>
-        <Route path = 'comedy/:name' element = {<EachMovie/>}/>
-        <Route path = 'action/:name' element = {<EachMovie/>}/>
+        <Route path = '/:category' element = {<GenrePages/>}/>
+        <Route path = '/:id' element = {<EachMovie/>}/>
+        <Route path = ':category/:id' element = {<EachMovie/>}/>
       </Routes>
       </QueryClientProvider>
     </>

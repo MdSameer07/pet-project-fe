@@ -1,0 +1,80 @@
+/* .Body{
+    padding-top:5%;
+    background-color: lightgray;
+}
+
+.Image{
+    display:flex;
+    justify-content:center;
+}
+
+.basic-details{
+    display:flex;
+    justify-content: space-between;
+    width:70%;
+    margin-left:15%;
+    font-size:40px;
+    color:rgb(44, 39, 212);
+    margin-top:2%;
+    background-color:blanchedalmond;
+    border-radius:3px;
+}
+
+.rating{
+    color:rgb(22, 106, 22)
+}
+
+.Description{
+    background-color: blanchedalmond;
+    width:70%;
+    margin-left:15%;
+    margin-top:3%;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    text-align:center;
+    border-radius:3px;
+}
+
+.Summary{
+    font-size:25px;
+} */
+
+.image{
+    display:flex;
+    justify-content:center;
+    margin-top:3%;
+}
+
+.Description{
+    display:flex;
+    justify-content:center;
+    margin-top:3%;
+}
+
+.Movie-Description{
+    width:80%;
+    background-color:blanchedalmond;
+    border-radius:3px;
+}
+
+.values{
+    font-size:17px;
+    font-weight:bold;
+}
+
+.button{
+    display:flex;
+    justify-content: center;
+    margin-top:3%;
+    margin-bottom:2%;
+    cursor:pointer;
+}
+
+.wl{
+    font-size:20px;
+    padding:7px 11px 7px 11px;
+    background-color: blanchedalmond;
+    font-weight:bold;
+    border-radius:5px;
+}

@@ -13,7 +13,7 @@ export const ActionMovies = () =>{
     // console.log(data.data[0]['Thriller-Movies'][0].name)
     return(
         <div className = 'movies-list'>
-            {data.data[4]['Action-Movies'].map((movie)=>{
+            {data.data[3]['action-Movies'].map((movie)=>{
                 return (
                     <Movie data = {movie}/>
                 )

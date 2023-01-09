@@ -18,6 +18,8 @@
     background-color:lightgray;
     color:blue;
     text-decoration: none;
+    padding:3px 3px 3px 3px;
+    border-radius:3px;
 }
 
 .title{

@@ -12,35 +12,35 @@ export const Movies = () =>{
     return (
         <>
             <div className = 'movies-list'>
-                {data.data[0]['Thriller-Movies'].map((movie)=>{
+                {data.data[0]['thriller-Movies'].map((movie)=>{
                     return (
                         <Movie data = {movie}/>
                     )
                 })}
             </div>
             <div className = 'movies-list'>
-                {data.data[1]['Romantic-Movies'].map((movie)=>{
+                {data.data[1]['romance-Movies'].map((movie)=>{
                     return (
                         <Movie data = {movie}/>
                     )
                 })}
             </div>
             <div className = 'movies-list'>
-                {data.data[2]['Horror-Movies'].map((movie)=>{
+                {data.data[2]['horror-Movies'].map((movie)=>{
                     return (
                         <Movie data = {movie}/>
                     )
                 })}
             </div>
             <div className = 'movies-list'>
-                {data.data[3]['Comedy-Movies'].map((movie)=>{
+                {data.data[4]['comedy-Movies'].map((movie)=>{
                     return (
                         <Movie data = {movie}/>
                     )
                 })}
             </div>
             <div className = 'movies-list'>
-                {data.data[4]['Action-Movies'].map((movie)=>{
+                {data.data[3]['action-Movies'].map((movie)=>{
                     return (
                         <Movie data = {movie}/>
                     )
