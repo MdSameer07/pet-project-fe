@@ -9,6 +9,9 @@ export const SearchBar = () =>{
     const [valid,setValid] = useState(false)
 
     const onChange = (e) =>{
+        if(valid===true){
+            setValid(false)
+        }
         setValue(e.target.value)
     }
 

@@ -1,0 +1,14 @@
+.whole{
+    border:1px solid blue;
+    display:flex;
+    flex-direction:row;
+    padding:5px 13px 5px 7px;
+    border-radius:4px;
+    font-size:18px;
+    background-color: blanchedalmond;
+    font-weight: 500;
+}
+
+.avatar{
+    margin-left:7%;
+}

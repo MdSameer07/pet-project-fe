@@ -3,53 +3,34 @@ import { Image1 } from './Image1'
 import './MovieDescription.css'
 import React from 'react';
 import { Descriptions } from 'antd';
+import { AddToWatchList } from './AddToWatchList';
 
 export const MovieDescription = (movie) =>{
-    // return (
-    //     <div className = 'Body'>
-    //         <div className = 'Image'>
-    //             <Image id = {movie.movie.id} src = {movie.movie.image} alt = {movie.movie.description} width = '70%'/>
-    //         </div>
-    //         <div className = 'basic-details'>
-    //             <div className = 'name'>
-    //                 {movie.movie.name}
-    //             </div>
-    //             <div className = 'rating'>
-    //                 {movie.movie.rating}
-    //             </div>
-    //         </div>
-    //         <div className = 'Description'>
-    //             <div className = 'Summary'>
-    //                 {movie.movie.description}
-    //             </div>
-    //         </div>
-    //     </div>
-    // )
-    console.log('Description')
     return (
         <>
             <div className = 'image'>
-                <Image1 id = {movie.movie.id} src = {movie.movie.image} alt = {movie.movie.description} width = '69%'/>
+                <Image1 id = {movie.movie.id} src = {movie.movie.image} alt = {movie.movie.description} width = '69%' height = '500px'/>
             </div>
             <div className = 'Description'>
                 <div className = 'Movie-Description'>
                     <Descriptions
-                        title="Movie Description"
+                        title="Movie Description :"
                         bordered
                         column={{xxl: 4,xl: 3,lg: 3,md: 3,sm: 2,xs: 1,}}>
-                        <Descriptions.Item label="Name"><div className = 'values'>{movie.movie.name}</div></Descriptions.Item>
-                        <Descriptions.Item label="Director"><div className = 'values'>{movie.movie.director}</div></Descriptions.Item>
-                        <Descriptions.Item label="ReleaseDate"><div className = 'values'>{movie.movie.releasedate}</div></Descriptions.Item>
-                        <Descriptions.Item label="Duration"><div className = 'values'>{movie.movie.duration}</div></Descriptions.Item>
-                        <Descriptions.Item label="Rating"><div className = 'values'>{movie.movie.rating}</div></Descriptions.Item>
-                        <Descriptions.Item label="Genre"><div className = 'values'>{movie.movie.category}</div></Descriptions.Item>
-                        <Descriptions.Item label="Description"><div className = 'values'>{movie.movie.description}</div></Descriptions.Item>
+                        <Descriptions.Item label={<strong>Name :</strong>}><div className = 'values'>{movie.movie.name}</div></Descriptions.Item>
+                        <Descriptions.Item label={<strong>Director :</strong>}><div className = 'values'>{movie.movie.director}</div></Descriptions.Item>
+                        <Descriptions.Item label={<strong>ReleaseDate :</strong>}><div className = 'values'>{movie.movie.releasedate}</div></Descriptions.Item>
+                        <Descriptions.Item label={<strong>Duration :</strong>}><div className = 'values'>{movie.movie.duration}</div></Descriptions.Item>
+                        <Descriptions.Item label={<strong>Rating :</strong>}><div className = 'values'>{movie.movie.rating}</div></Descriptions.Item>
+                        <Descriptions.Item label={<strong>Genre :</strong>}><div className = 'values'>{movie.movie.category}</div></Descriptions.Item>
+                        <Descriptions.Item label={<strong>Description :</strong>}><div className = 'values'>{movie.movie.description}</div></Descriptions.Item>
                     </Descriptions>
                 </div>
             </div>
             <div className = 'button'>
-                <div className = 'wl'>Add To WatchList</div>
+                <AddToWatchList props = {movie}/>
             </div>
+
         </>
     )
 }

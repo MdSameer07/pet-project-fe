@@ -8,7 +8,6 @@ export const EachMovie = () =>{
     const arr = thing.split('-')
     const id = arr[arr.length-1]
     const tmp = useParams().category;
-    console.log(arr)
     const cat = tmp==='movies'?arr[arr.length-2]+'-Movies':tmp+'-Movies'
     const category = tmp!=='movies'?tmp:arr[arr.length-2]
     const {isLoading,data,isError,error} = useMoviesData()

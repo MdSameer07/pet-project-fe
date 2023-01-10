@@ -1,0 +1,44 @@
+.watchlist-button:hover{
+    cursor:pointer;
+}
+
+.watchlist-button span:nth-child(1){
+    color:white;
+}
+
+.watchlist-button span:nth-child(2){
+    padding:0 2px;
+    background-color:red;
+    color:white;
+    font-weight:bold;
+    border-radius:3px;
+    position:relative;
+    top:-15px;
+    left:-7px;
+}
+
+.watchlist-1{
+    background-color: blue;
+    color:white;
+    border-radius : 5px;
+    padding:7px 21px 7px 21px;
+    cursor:pointer;
+    font-size:21px;
+}
+
+.watchlist-2{
+    z-index: 2;
+    display:flex;
+    overflow-y:scroll;
+    position:absolute;
+    top:10%;
+    right:12%;
+    width:35%;
+    max-height:50%;
+    height:fit-content;
+    border:1px solid black;
+    background-color: lightgray;
+    flex-direction:column;
+    margin-top:0.5%;
+    margin-right:1.7%;
+}

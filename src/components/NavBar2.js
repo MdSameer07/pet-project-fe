@@ -1,7 +1,7 @@
 import './NavBar2.css'
 import { NavLink } from 'react-router-dom'
 import { SearchBar } from './SearchBar'
-// import { SearchDropDown } from './SearchDropDown'
+import { WatchList } from './WatchList'
 
 export const NavBar2 = () =>{
 
@@ -22,12 +22,11 @@ export const NavBar2 = () =>{
                 <div className = 'Middle1'>
                     <NavLink className = 'movies' to = '/movies'>MOVIES</NavLink>
                     <SearchBar/>
-                    {/* <SearchDropDown/> */}
                 </div>
                 <div className = 'Final'>
                     <NavLink style = {finalstylelink} to = '/insights'>INSIGHTS</NavLink>
-                    <NavLink style = {finalstylelink} to = '/login'>WATCHLIST</NavLink>
-                    <NavLink style = {finalstylelink} to = '/register'>PROFILE</NavLink>
+                    <WatchList/>
+                    <NavLink style = {finalstylelink}>PROFILE</NavLink>
                 </div>
         </nav>
     )

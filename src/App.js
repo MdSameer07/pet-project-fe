@@ -8,13 +8,15 @@ import { GenrePages } from './components/GenrePages';
 import { Movies } from './components/Movies';
 import { EachMovie } from './components/EachMovie';
 import {QueryClientProvider,QueryClient} from 'react-query'
+import { RecoilRoot } from 'recoil'
 
 const queryClient = new QueryClient()
 
 function App() {
   return (
-    <>
+    <RecoilRoot>
     <QueryClientProvider client = {queryClient}>
+    <>
       <NavBar2/>
       <Routes>
         <Route path = '/' element = {<Body/>}/>
@@ -25,8 +27,9 @@ function App() {
         <Route path = '/:id' element = {<EachMovie/>}/>
         <Route path = ':category/:id' element = {<EachMovie/>}/>
       </Routes>
-      </QueryClientProvider>
-    </>
+      </>
+    </QueryClientProvider>
+    </RecoilRoot>
   );
 }
 

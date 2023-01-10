@@ -2,7 +2,7 @@ import './Description.css'
 
 export const Description = (props) =>{
     return(
-        <div className = 'description'>
+        <div className = 'descriptioN'>
             <div className = 'stylename'>
             <div className = 'name'>
                 <h3>{props.name}</h3>
