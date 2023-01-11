@@ -33,3 +33,13 @@
     color: rgb(124, 229, 112);
     cursor:pointer;
 }
+
+.top{
+    margin-left:4%;
+    font-size:38px;
+}
+
+.bottom{
+    margin-left:4%;
+    font-size:49px;
+}

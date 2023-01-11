@@ -1,5 +1,5 @@
 import './App.css';
-import {NavBar2} from './components/NavBar2'
+import { NavBar } from './components/NavBar';
 import {Body} from './components/Body'
 import {Routes,Route} from 'react-router-dom'
 import {LoginPage} from './components/LoginPage'
@@ -13,13 +13,15 @@ import { RecoilRoot } from 'recoil'
 const queryClient = new QueryClient()
 
 function App() {
+
   return (
     <RecoilRoot>
     <QueryClientProvider client = {queryClient}>
     <>
-      <NavBar2/>
+    <NavBar/>
       <Routes>
         <Route path = '/' element = {<Body/>}/>
+        <Route path = '/home' element = {<Body/>}/>
         <Route path = '/login' element = {<LoginPage/>}/>
         <Route path = '/register' element = {<RegisterPage/>}/>
         <Route path = '/movies' element = {<Movies/>}/>

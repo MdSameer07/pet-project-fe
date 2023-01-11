@@ -1,4 +1,3 @@
-// import { Image } from "./Image"
 import { Image1 } from './Image1'
 import './MovieDescription.css'
 import React from 'react';

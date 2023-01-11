@@ -1,10 +1,13 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
+import { useRecoilValue } from "recoil"
+import { IsLoggedIn } from "../Recoil/IsLoggedIn"
 import './SearchBar.css'
 var data = ['thriller','horror','comedy','action','romance']
 
 
 export const SearchBar = () =>{
+    const isLoggedIn = useRecoilValue(IsLoggedIn)
     const [value,setValue] = useState('')
     const [valid,setValid] = useState(false)
 
@@ -15,7 +18,8 @@ export const SearchBar = () =>{
         setValue(e.target.value)
     }
 
-        return (
+        if(isLoggedIn){
+            return (
             <div className = 'whole-search'>
                 <div className = 'search-container'>
                     <div className = 'search-inner'>
@@ -33,5 +37,19 @@ export const SearchBar = () =>{
                 }).slice(0,10).map((item)=><div className = 'dropdown-row' onClick = {()=>{setValue(item);setValid(true)}}>{item}</div>)}
                 </div>
             </div>
-        )
+            )
+        }else{
+            return(
+                <div className = 'whole-search'>
+                    <div className = 'search-container'>
+                        <div className = 'search-inner'>
+                            <input className = 'input' type = 'text' placeholder = 'Search For Category' value = {value} onChange = {onChange}/>
+                        </div>
+                        <div className = 'search-outer'>
+                            <button className = 'search-button'>Search</button>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
 }

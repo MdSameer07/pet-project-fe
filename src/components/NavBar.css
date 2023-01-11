@@ -1,20 +1,16 @@
-.Nav{
+.NAV{
     display:flex;
     background-color:blanchedalmond;
     align-items:center;
     padding:1.7% 0 1.7% 2%;
     height:70px;
 }
-
-/* .Initial{
-    width:5%;
+.firsT{
+    border:1px solid red;
+    display:flex;
 }
 
-.Initial>img{
-    width:100%;
-} */
-
-.Initial{
+.INITIAL{
     width:7%;
 }
 .Inner>img{
@@ -22,34 +18,47 @@
     height:60px;
 }
 
-.Middle1{
+.MIDDLE1{
     display:flex;
     justify-content: space-between;
     align-items:center;
     width:40%;
     margin-left:5%;
-    font-family: cursive;
 }
 
-.movies{
+.MOVIES{
     font-size:25px;
     color:black;
     text-decoration: none;
 }
 
-.movies:hover{
+.MOVIES:hover{
     color:red;
     cursor:pointer;
 }
 
-.Final{
+.FINAL{
     width:35%;
     display:flex;
     justify-content: space-between;
     margin-left:12%;
     font-size:25px;
-    font-family: cursive;
 }
 
+.Final{
+    width:20%;
+    display:flex;
+    justify-content: space-between;
+    margin-left:21%;
+    font-size:25px;
+}
 
+.login,.register{
+    color:black;
+    text-decoration:none;
+}
+
+.login:hover,.register:hover{
+    color:blue;
+}
 
