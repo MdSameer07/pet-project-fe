@@ -16,6 +16,7 @@
 .enD{
     display:flex;
     justify-content: center;
+    margin-top:2%;
 }
 
 .inpuT{
@@ -54,4 +55,9 @@
     color:rgb(4, 4, 122);
     margin-left:1%;
     text-decoration:none;
+}
+
+.error-message{
+    text-align:center;
+    color:red;
 }

@@ -1,14 +1,19 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as yup from 'yup';
 import './LoginForm.css'
 import { NavLink, useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Firebase";
+import { WatchListRecoil } from "../Recoil/WatchListRecoil";
 import { useRecoilState } from "recoil";
-import { IsLoggedIn } from "../Recoil/IsLoggedIn";
 
 export const LoginForm = () =>{
     const navigate = useNavigate();
-    const [isLoggedIn,setIsLoggedIn] = useRecoilState(IsLoggedIn)
+    const [errorMsg,setErrorMsg] = useState("")
+    const [submitButtonDisabled,setSubmitButtonDisabled] = useState(false)
+    const [watchList,setWatchList] = useRecoilState(WatchListRecoil)
+
     const formInitialSchema = {
         email: '',
         password: '',
@@ -22,9 +27,17 @@ export const LoginForm = () =>{
     });
     
     const handleFormSubmit = (values) => {
-        console.log("Submitted values", values)
-        setIsLoggedIn(true)
-        navigate('/home')
+        setSubmitButtonDisabled(true)
+        signInWithEmailAndPassword(auth,values.email,values.password).then(res=>{
+            setSubmitButtonDisabled(false)
+            localStorage.setItem('email',values.email)
+            localStorage.setItem('isLoggedIn',true)
+            setWatchList(JSON.parse(localStorage.getItem(''+values.email)))
+            navigate('/home')
+        }).catch(err=>{
+            setErrorMsg(err.message)
+            setSubmitButtonDisabled(false)
+        })
     }
 
     return (
@@ -53,8 +66,9 @@ export const LoginForm = () =>{
                                         <ErrorMessage name="password" />
                                     </p>
                                 </div>
+                                <div className = 'error-message'>{errorMsg}</div>
                                 <div className="end">
-                                    <button className="Button" type="submit">
+                                    <button className="Button" type="submit" disabled = {submitButtonDisabled}>
                                         Login
                                     </button>
                                 </div>

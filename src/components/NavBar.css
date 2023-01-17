@@ -1,6 +1,6 @@
 .NAV{
     display:flex;
-    background-color:blanchedalmond;
+    background-color: #efe2ba;
     align-items:center;
     padding:1.7% 0 1.7% 2%;
     height:70px;
@@ -38,10 +38,11 @@
 }
 
 .FINAL{
-    width:35%;
+    width:45%;
     display:flex;
     justify-content: space-between;
-    margin-left:12%;
+    align-items:center;
+    margin-left:1%;
     font-size:25px;
 }
 
@@ -62,3 +63,16 @@
     color:blue;
 }
 
+.lobutton{
+    background-color: blue;
+    font-size:23px;
+    color:white;
+    border-radius:5px;
+}
+.lobutton:hover{
+    cursor:pointer;
+}
+
+.insights:hover,.profile:hover{
+    color:blue;
+}

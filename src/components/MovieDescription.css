@@ -13,7 +13,7 @@
 .Movie-Description{
     border:1px solid blue;
     width:80%;
-    background-color:blanchedalmond;
+    background-color: #efe2ba;
     border-radius:3px;
 }
 
@@ -33,7 +33,7 @@
 .wl{
     font-size:20px;
     padding:7px 11px 7px 11px;
-    background-color: blanchedalmond;
+    background-color: #efe2ba;
     font-weight:bold;
     border-radius:5px;
 }

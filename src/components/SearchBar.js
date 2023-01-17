@@ -1,55 +1,53 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
-import { useRecoilValue } from "recoil"
-import { IsLoggedIn } from "../Recoil/IsLoggedIn"
 import './SearchBar.css'
-var data = ['thriller','horror','comedy','action','romance']
+var data = ['thriller', 'horror', 'comedy', 'action', 'romance']
 
 
-export const SearchBar = () =>{
-    const isLoggedIn = useRecoilValue(IsLoggedIn)
-    const [value,setValue] = useState('')
-    const [valid,setValid] = useState(false)
+export const SearchBar = () => {
+    const tmp = localStorage.getItem('isLoggedIn')
+    const [value, setValue] = useState('')
+    const [valid, setValid] = useState(false)
 
-    const onChange = (e) =>{
-        if(valid===true){
+    const onChange = (e) => {
+        if (valid === true) {
             setValid(false)
         }
         setValue(e.target.value)
     }
 
-        if(isLoggedIn){
-            return (
-            <div className = 'whole-search'>
-                <div className = 'search-container'>
-                    <div className = 'search-inner'>
-                        <input className = 'input' type = 'text' placeholder = 'Search For Category' value = {value} onChange = {onChange}/>
+    if (tmp) {
+        return (
+            <div className='whole-search'>
+                <div className='search-container'>
+                    <div className='search-inner'>
+                        <input className='input' type='text' placeholder='Search For Category' value={value} onChange={onChange} />
                     </div>
-                    <div className = 'search-outer'>
-                        {valid? <NavLink className = 'navsearch-button' to = {value} onClick = {()=>setValid(false)}>Search</NavLink>:<button className = 'search-button'>Search</button>}
+                    <div className='search-outer'>
+                        {valid ? <NavLink className='navsearch-button' to={value} onClick={() => setValid(false)}>Search</NavLink> : <button className='search-button'>Search</button>}
                     </div>
                 </div>
-                <div className = 'dropdown'>
-                    {data.filter(item=>{
-                    const searchTerm = value.toLowerCase();
-                    const targetTerm = item.toLowerCase();
-                    return searchTerm && targetTerm.startsWith(searchTerm) && targetTerm!==searchTerm
-                }).slice(0,10).map((item)=><div className = 'dropdown-row' onClick = {()=>{setValue(item);setValid(true)}}>{item}</div>)}
+                <div className='dropdown'>
+                    {data.filter(item => {
+                        const searchTerm = value.toLowerCase();
+                        const targetTerm = item.toLowerCase();
+                        return searchTerm && targetTerm.startsWith(searchTerm) && targetTerm !== searchTerm
+                    }).slice(0, 10).map((item) => <div className='dropdown-row' onClick={() => { setValue(item); setValid(true) }}>{item}</div>)}
                 </div>
             </div>
-            )
-        }else{
-            return(
-                <div className = 'whole-search'>
-                    <div className = 'search-container'>
-                        <div className = 'search-inner'>
-                            <input className = 'input' type = 'text' placeholder = 'Search For Category' value = {value} onChange = {onChange}/>
-                        </div>
-                        <div className = 'search-outer'>
-                            <button className = 'search-button'>Search</button>
-                        </div>
+        )
+    } else {
+        return (
+            <div className='whole-search'>
+                <div className='search-container'>
+                    <div className='search-inner'>
+                        <input className='input' type='text' placeholder='Search For Category' value={value} onChange={onChange} />
+                    </div>
+                    <div className='search-outer'>
+                        <button className='search-button'>Search</button>
                     </div>
                 </div>
-            )
-        }
+            </div>
+        )
+    }
 }

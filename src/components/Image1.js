@@ -3,8 +3,8 @@ import { Image } from 'antd';
 export const Image1 = (props) => (
   <Image
     width={props.width}
-    height = {props.height}
+    height={props.height}
     src={props.src}
-    alt = {props.description}
+    alt={props.description}
   />
 );
