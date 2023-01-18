@@ -1,26 +1,52 @@
-import React from 'react';
-import { AudioOutlined } from '@ant-design/icons';
-import { Input} from 'antd';
+import { useState } from "react"
+import { NavLink } from "react-router-dom"
+import './SearchBar.css'
+var data = ['thriller', 'horror', 'comedy', 'action', 'romance']
 
-const { Search } = Input;
+export const SearchBar = () => {
+    const tmp = localStorage.getItem('isLoggedIn')
+    const [value, setValue] = useState('')
+    const [valid, setValid] = useState(false)
 
-const suffix = (
-    <AudioOutlined
-      style={{
-        fontSize: 16,
-        color: '#1890ff',
-      }}
-    />
-  );
+    const onChange = (e) => {
+        if (valid === true) {
+            setValid(false)
+        }
+        setValue(e.target.value)
+    }
 
-export const SearchBar = () =>{
-    return(
-        <Search
-      placeholder="input search text"
-      enterButton="Search"
-      size="large"
-      suffix={suffix}
-      style = {{width:400}}
-    />
-    )
+    if (tmp) {
+        return (
+            <div className='whole-search'>
+                <div className='search-container'>
+                    <div className='search-inner'>
+                        <input className='input' type='text' placeholder='Search For Category' value={value} onChange={onChange} />
+                    </div>
+                    <div className='search-outer'>
+                        {valid ? <NavLink className='navsearch-button' to={value} onClick={() => setValid(false)}>Search</NavLink> : <button className='search-button'>Search</button>}
+                    </div>
+                </div>
+                <div className='dropdown'>
+                    {data.filter(item => {
+                        const searchTerm = value.toLowerCase();
+                        const targetTerm = item.toLowerCase();
+                        return searchTerm && targetTerm.startsWith(searchTerm) && targetTerm !== searchTerm
+                    }).slice(0, 10).map((item) => <div className='dropdown-row' onClick={() => { setValue(item); setValid(true) }}>{item}</div>)}
+                </div>
+            </div>
+        )
+    } else {
+        return (
+            <div className='whole-search'>
+                <div className='search-container'>
+                    <div className='search-inner'>
+                        <input className='input' type='text' placeholder='Search For Category' value={value} onChange={onChange} />
+                    </div>
+                    <div className='search-outer'>
+                        <button className='search-button'>Search</button>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 }

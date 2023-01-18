@@ -1,15 +1,4 @@
-/* .movies-list{
-    width:99.8%;
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:space-around;
-    background:linear-gradient(darkgray,darkgray);
-    height:auto;
-    margin-top:4%;
-} */
-
-.movies-list{
+.genre-movies-list{
     width:100%;
     display:flex;
     flex-direction:row;
