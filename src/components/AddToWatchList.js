@@ -34,15 +34,15 @@ export const AddToWatchList = ({ props }) => {
     }
     if (movieInWatchList) {
         return (
-            <div className='WholE' onClick={removeFromWatchList}>
-                <div className='WatchList'>WatchList</div>
+            <div className='add-to-watchlist-button' onClick={removeFromWatchList}>
+                <div>WatchList</div>
                 <div className='avatar'>✔</div>
             </div>
         )
     } else {
         return (
-            <div className='WholE' onClick={addToWatchList}>
-                <div className='WatchList'>WatchList</div>
+            <div className='add-to-watchlist-button' onClick={addToWatchList}>
+                <div>WatchList</div>
                 <div className='avatar'>+</div>
             </div>
         )

@@ -15,7 +15,7 @@ export const GenrePages = () => {
         return <h2>{error.message}</h2>
     }
     return (
-        <div className='movies-list'>
+        <div className='genre-movies-list'>
             {data.data[mapping[category]][cat].map((movie) => {
                 return (
                     <Movie data={movie} />

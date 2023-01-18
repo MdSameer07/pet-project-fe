@@ -5,8 +5,8 @@ export const Options = () => {
     const tmp = localStorage.getItem('isLoggedIn')
     if (tmp) {
         return (
-            <div className='Body2'>
-                <h3 className='title'>Genres</h3>
+            <div className='body-footer'>
+                <h3 className='body-footer-title'>Genres</h3>
                 <div className='filters'>
                     <NavLink className='options' to='/thriller'>THRILLER</NavLink>
                     <NavLink className='options' to='/horror'>HORROR</NavLink>
@@ -18,9 +18,9 @@ export const Options = () => {
         )
     } else {
         return (
-            <div className='Body2'>
-                <p className='top'>Find The Best Thriller,Horror,Comedy,Action,Romance Movies To Watch.</p>
-                <p className='bottom'>Login or Sign Up Now To Start Your Journey.</p>
+            <div className='body-footer'>
+                <p className='body-footer-top'>Find The Best Thriller,Horror,Comedy,Action,Romance Movies To Watch.</p>
+                <p className='body-footer-bottom'>Login or Sign Up Now To Start Your Journey.</p>
             </div>
         )
     }

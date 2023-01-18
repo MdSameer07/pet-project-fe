@@ -7,11 +7,11 @@ import { AddToWatchList } from './AddToWatchList';
 export const MovieDescription = (movie) => {
     return (
         <>
-            <div className='image'>
+            <div className='descp-image'>
                 <Image1 id={movie.movie.id} src={movie.movie.image} alt={movie.movie.description} width='69%' height='500px' />
             </div>
-            <div className='Description'>
-                <div className='Movie-Description'>
+            <div className='whole-description'>
+                <div className='movie-description'>
                     <Descriptions
                         title="Movie Description :"
                         bordered
@@ -22,11 +22,11 @@ export const MovieDescription = (movie) => {
                         <Descriptions.Item label={<strong>Duration :</strong>}><div className='values'>{movie.movie.duration}</div></Descriptions.Item>
                         <Descriptions.Item label={<strong>Rating :</strong>}><div className='values'>{movie.movie.rating}</div></Descriptions.Item>
                         <Descriptions.Item label={<strong>Genre :</strong>}><div className='values'>{movie.movie.category}</div></Descriptions.Item>
-                        <Descriptions.Item label={<strong>Description :</strong>}><div className='values'>{movie.movie.description}</div></Descriptions.Item>
+                        <Descriptions.Item label={<strong>Description:</strong>}><div className='values'>{movie.movie.description}</div></Descriptions.Item>
                     </Descriptions>
                 </div>
             </div>
-            <div className='button'>
+            <div className='atwl-button'>
                 <AddToWatchList props={movie} />
             </div>
 

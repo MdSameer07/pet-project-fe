@@ -1,4 +1,4 @@
-import { Fragment, useContext, useState } from "react";
+import { Fragment, useState } from "react";
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as yup from 'yup';
 import './RegisterForm.css'
@@ -50,7 +50,6 @@ export const RegisterForm = () => {
                 'romance': 0
             }
             localStorage.setItem(values.email + 'movies', JSON.stringify(interest))
-            console.log(JSON.parse(localStorage.getItem(values.email + 'movies')))
             setWatchList([])
             navigate('/home')
         }).catch(err => {
@@ -61,53 +60,51 @@ export const RegisterForm = () => {
 
     return (
         <Fragment>
-            <div className="containeR">
-                <div className="inner-containeR">
-                    <Formik initialValues={formInitialSchema} validationSchema={formValidationSchema}
-                        onSubmit={(values => handleFormSubmit(values))}>
-                        {({ values }) =>
-                            <Form className='FoRm'>
-                                <div className='ComP'>
-                                    <div className="inpuT">Name</div>
-                                    <Field type="text" name="name" placeholder="Enter your Name" className="form-controL" />
-                                    <p className="text-dangeR">
-                                        <ErrorMessage name="name" />
-                                    </p>
-                                </div>
-                                <div className='ComP'>
-                                    <div className="inpuT">Email</div>
-                                    <Field type="text" name="email" placeholder="Enter your Email" className="form-controL" />
-                                    <p className="text-dangeR">
-                                        <ErrorMessage name="email" />
-                                    </p>
-                                </div>
-                                <div className='ComP'>
-                                    <div className="inpuT">Password</div>
-                                    <Field type="password" name="password" placeholder="Enter your Password" className="form-controL" />
-                                    <p className="text-dangeR">
-                                        <ErrorMessage name="password" />
-                                    </p>
-                                </div>
-                                <div className='ComP'>
-                                    <div className="inpuT">Confirm Password</div>
-                                    <Field type="password" name="confirmPassword" placeholder="Confirm your Password" className="form-controL" />
-                                    <p className="text-dangeR">
-                                        <ErrorMessage name="confirmPassword" />
-                                    </p>
-                                </div>
-                                <div className='error-message'>{errorMsg}</div>
-                                <div className="enD">
-                                    <button className="buttoN" type="submit" disabled={submitButtonDisabled}>
-                                        Sign Up
-                                    </button>
-                                </div>
-                                <div className='footeR'>
-                                    <div>Already a User?<NavLink className='LinK' to='/login'>Login Now!</NavLink></div>
-                                </div>
-                            </Form>
-                        }
-                    </Formik>
-                </div>
+            <div className="container">
+                <Formik initialValues={formInitialSchema} validationSchema={formValidationSchema}
+                    onSubmit={(values => handleFormSubmit(values))}>
+                    {({ values }) =>
+                        <Form className='register-form'>
+                            <div className='comp'>
+                                <div className="input">Name</div>
+                                <Field type="text" name="name" placeholder="Enter your Name" className="form-control" />
+                                <p className="text-danger">
+                                    <ErrorMessage name="name" />
+                                </p>
+                            </div>
+                            <div className='comp'>
+                                <div className="input">Email</div>
+                                <Field type="text" name="email" placeholder="Enter your Email" className="form-control" />
+                                <p className="text-danger">
+                                    <ErrorMessage name="email" />
+                                </p>
+                            </div>
+                            <div className='comp'>
+                                <div className="input">Password</div>
+                                <Field type="password" name="password" placeholder="Enter your Password" className="form-control" />
+                                <p className="text-danger">
+                                    <ErrorMessage name="password" />
+                                </p>
+                            </div>
+                            <div className='comp'>
+                                <div className="input">Confirm Password</div>
+                                <Field type="password" name="confirmPassword" placeholder="Confirm your Password" className="form-control" />
+                                <p className="text-danger">
+                                    <ErrorMessage name="confirmPassword" />
+                                </p>
+                            </div>
+                            <div className='error-message'>{errorMsg}</div>
+                            <div className="end">
+                                <button className="register-button" type="submit" disabled={submitButtonDisabled}>
+                                    Sign Up
+                                </button>
+                            </div>
+                            <div className='register-footer'>
+                                <div>Already a User?<NavLink className='link-to-login' to='/login'>Login Now!</NavLink></div>
+                            </div>
+                        </Form>
+                    }
+                </Formik>
             </div>
         </Fragment >
     )

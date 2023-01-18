@@ -3,9 +3,9 @@ import { LoginForm } from './LoginForm';
 
 export const LoginPage = () => {
     return (
-        <div className='Login'>
-            <div className='form'>
-                <div className='headinG'>Welcome</div>
+        <div className='login-page'>
+            <div className='login-form-outer'>
+                <div className='login-heading'>Welcome</div>
                 <LoginForm />
             </div>
         </div>

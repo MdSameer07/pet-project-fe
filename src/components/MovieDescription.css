@@ -1,16 +1,16 @@
-.image{
+.descp-image{
     display:flex;
     justify-content:center;
     margin-top:3%;
 }
 
-.Description{
+.whole-description{
     display:flex;
     justify-content:center;
     margin-top:3%;
 }
 
-.Movie-Description{
+.movie-description{
     border:1px solid blue;
     width:80%;
     background-color: #efe2ba;
@@ -22,18 +22,10 @@
     font-weight:bold;
 }
 
-.button{
+.atwl-button{
     display:flex;
     justify-content: center;
     margin-top:3%;
     margin-bottom:2%;
     cursor:pointer;
-}
-
-.wl{
-    font-size:20px;
-    padding:7px 11px 7px 11px;
-    background-color: #efe2ba;
-    font-weight:bold;
-    border-radius:5px;
 }

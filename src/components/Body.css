@@ -1,4 +1,4 @@
-.main{
+.body-heading{
     font-size:80px;
     font-weight:bold;
     border:1px solid blue;
@@ -7,12 +7,12 @@
     margin-left:4%;
 }
 
-.outer{
+.whole-body{
     border:1px solid red;
     background-color: #85dcb8;
 }
 
-.side{
+.body-side-heading{
     width:40%;
     font-size:21px;
     border:1px solid purple;

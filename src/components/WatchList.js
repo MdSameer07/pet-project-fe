@@ -15,7 +15,7 @@ export const WatchList = () => {
     }
 
     return (
-        <div className='WATCHLIST'>
+        <div>
             <div className='watchlist-button' onClick={showWatchList}>
                 <span className='watchlist-1'>WATCHLIST</span>
                 <span>{watchListLength}</span>

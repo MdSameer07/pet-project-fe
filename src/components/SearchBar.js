@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom"
 import './SearchBar.css'
 var data = ['thriller', 'horror', 'comedy', 'action', 'romance']
 
-
 export const SearchBar = () => {
     const tmp = localStorage.getItem('isLoggedIn')
     const [value, setValue] = useState('')

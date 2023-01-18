@@ -4,11 +4,11 @@ import './Insights.css'
 export const Insights = () => {
     const chartmake = JSON.parse(localStorage.getItem(localStorage.getItem('email') + 'movies'))
     return (
-        <div className='total'>
-            <div className='upper'>
-                <div className='Heading'>Bar Chart Developed By Movies Suggestion Team</div>
+        <div className='whole-insights'>
+            <div className='heading-style'>
+                <div className='heading'>Bar Chart Developed By Movies Suggestion Team</div>
             </div>
-            <div className='middle'>
+            <div className='chart'>
                 <Chart
                     type='bar'
                     width={1380}
@@ -23,10 +23,6 @@ export const Insights = () => {
                         colors: ['#f99900'],
                         theme: { mode: 'light' },
                         xaxis: {
-                            // title:{
-                            //     text:'Movie Categories',
-                            //     style:{fontSize:20,color:'#f99900'}
-                            // },
                             tickPlacement: 'on',
                             categories: ['Thriller', 'Horror', 'Action', 'Comedy', 'Romance'],
                             labels: {
@@ -54,7 +50,7 @@ export const Insights = () => {
 
                 </Chart>
             </div>
-            <div className='lower'>
+            <div className='footer'>
                 <div>Movie Categories</div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-.descriptioN{
+.movie-short-description{
     border:1px solid red;
     display:flex;
     flex-direction:column;
@@ -12,12 +12,12 @@ h3{
     color:Black;
 }
 
-.stylename{
+.style-name{
     display:flex;
     justify-content: center;
 }
 
-.stylerating{
+.style-rating{
     display:flex;
     justify-content: center;
     margin-top:-7%;

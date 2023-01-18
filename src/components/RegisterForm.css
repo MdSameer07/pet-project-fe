@@ -1,30 +1,9 @@
-.containeR{
-    display:flex;
-    flex-direction:column;
-}
-
-.ComP{
-    display:flex;
-    flex-direction:column;
-}
-
-.FoRm{
+.register-form{
     margin-top:2%;
     width:500px;
 }
 
-.enD{
-    display:flex;
-    justify-content: center;
-    margin-top:2%;
-}
-
-.inpuT{
-    font-size:20px;
-    font-weight:500;
-}
-
-.buttoN{
+.register-button{
     background-color:blue;
     color:white;
     border-radius:10px;
@@ -33,31 +12,14 @@
     cursor:pointer;
 }
 
-.form-controL{
-    padding:10px 7px 10px 7px;
-    border-radius:15px;
-    margin-top:1%;
-}
-
-.text-dangeR{
-    color:red;
-    font-size:15px;
-    font-weight: 400;
-}
-
-.footeR{
+.register-footer{
     margin-top:3%;
     text-align:center;
     font-size:17px;
 }
 
-.LinK{
+.link-to-login{
     color:rgb(4, 4, 122);
     margin-left:1%;
     text-decoration:none;
-}
-
-.error-message{
-    text-align:center;
-    color:red;
 }
