@@ -1,0 +1,50 @@
+.watchlist-movie-image{
+    width:60%;
+    margin-left:10%;
+    margin-top:5%;
+}
+
+.watchlist-movie-image > img{
+    width:100%;
+    height:210px;
+}
+
+.watchlist-movie-description{
+    width:60%;
+    margin-left:10%;
+    display:flex;
+    font-size:20px;
+    justify-content: space-between;
+    font-weight:400;
+}
+
+.link-remove{
+    width:60%;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-left:10%;
+    font-size:20px;
+    margin-top:-6%;
+}
+
+.remove{
+    padding:1px 3px 1px 3px;
+    border-radius:3px;
+    background-color: rgb(229, 78, 78);
+    font-weight:bold;
+}
+
+.remove:hover{
+    cursor:pointer;
+}
+
+.ott{
+    color:rgb(26, 35, 214);
+    text-decoration:none;
+}
+
+.ott:hover{
+    cursor:pointer;
+}
+
