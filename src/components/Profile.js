@@ -1,13 +1,13 @@
-import { useContext } from "react"
-import { AuthContext } from "./AuthProvider"
+import { useRecoilValue } from "recoil"
+import { UserDetails } from "../Recoil/UserDetails"
 import './Profile.css'
 
 export const Profile = () => {
-    const { user } = useContext(AuthContext)
+    const user = useRecoilValue(UserDetails)
     const email = localStorage.getItem('email')
     return (
         <div className='profile-page'>
-            <div className='name'>Name : {user.displayName}</div>
+            <div className='name'>Name : {user}</div>
             <div className='email'>Email : {email}</div>
         </div>
     )

@@ -9,43 +9,22 @@ export const Movies = () => {
     if (isError) {
         return <h2>{error.message}</h2>
     }
+    const genres = {0:'thriller-Movies',1:'romance-Movies',2:'horror-Movies',3:'action-Movies',4:'comedy-Movies'}
+    const movies = []
+    const length = data.data.length
+    for(let i=0;i<length;i++){
+        const len = data.data[i][genres[i]].length
+        for(let j=0;j<len;j++){
+            movies.push(data.data[i][genres[i]][j])
+        }
+    }
     return (
-        <>
-            <div className='genre-movies-list'>
-                {data.data[0]['thriller-Movies'].map((movie) => {
-                    return (
+            <div className = 'genre-movies-list'>
+                {movies.map((movie)=>{
+                    return(
                         <Movie data={movie} />
                     )
                 })}
             </div>
-            <div className='genre-movies-list'>
-                {data.data[1]['romance-Movies'].map((movie) => {
-                    return (
-                        <Movie data={movie} />
-                    )
-                })}
-            </div>
-            <div className='genre-movies-list'>
-                {data.data[2]['horror-Movies'].map((movie) => {
-                    return (
-                        <Movie data={movie} />
-                    )
-                })}
-            </div>
-            <div className='genre-movies-list'>
-                {data.data[4]['comedy-Movies'].map((movie) => {
-                    return (
-                        <Movie data={movie} />
-                    )
-                })}
-            </div>
-            <div className='genre-movies-list'>
-                {data.data[3]['action-Movies'].map((movie) => {
-                    return (
-                        <Movie data={movie} />
-                    )
-                })}
-            </div>
-        </>
     )
 }

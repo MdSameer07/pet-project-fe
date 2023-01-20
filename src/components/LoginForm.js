@@ -14,6 +14,8 @@ export const LoginForm = () => {
     const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false)
     const [watchList, setWatchList] = useRecoilState(WatchListRecoil)
 
+    console.log(watchList)
+
     const formInitialSchema = {
         email: '',
         password: '',

@@ -2,7 +2,6 @@ import { useRecoilState } from 'recoil'
 import { WatchListRecoil as WatchList } from '../Recoil/WatchListRecoil'
 import './AddToWatchList.css'
 
-
 export const AddToWatchList = ({ props }) => {
 
     const [moviesInWatchList, setMoviesInWatchList] = useRecoilState(WatchList)

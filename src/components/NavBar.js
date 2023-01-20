@@ -1,13 +1,33 @@
 import './NavBar.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { SearchBar } from './SearchBar'
 import { WatchList } from './WatchList'
-import { useContext } from 'react'
-import { AuthContext } from './AuthProvider'
+import { auth } from '../Firebase'
+import { useRecoilState } from 'recoil'
+import { UserDetails } from '../Recoil/UserDetails'
+import { useEffect } from 'react'
 
 export const NavBar = () => {
     const tmp = localStorage.getItem('isLoggedIn')
-    const { logout } = useContext(AuthContext)
+    const [user,setUser] = useRecoilState(UserDetails)
+    const navigate = useNavigate()
+
+    console.log(user)
+
+    useEffect(() => {
+        auth.onAuthStateChanged((user) => {
+            setUser(user.displayName)
+        })
+    })
+    
+    const logout = () =>{
+        auth.signOut().then(() => {
+            setUser(null)
+            localStorage.removeItem('isLoggedIn')
+            localStorage.removeItem('email')
+            navigate('/')
+        })
+    }
 
     const finalstylelink = ({ isActive }) => {
         return {

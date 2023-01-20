@@ -8,7 +8,6 @@ import { Movies } from './components/Movies';
 import { EachMovie } from './components/EachMovie';
 import { QueryClientProvider, QueryClient } from 'react-query'
 import { RecoilRoot } from 'recoil'
-import { AuthProvider } from './components/AuthProvider';
 import { Profile } from './components/Profile';
 import { Insights } from './components/Insights';
 import { RequireAuth1 } from './components/RequireAuth1';
@@ -21,7 +20,6 @@ function App() {
   return (
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
-        <AuthProvider>
           <NavBar />
           <Routes>
             <Route path='/' element={<Body />} />
@@ -35,7 +33,6 @@ function App() {
             <Route path="/insights" element={<RequireAuth1><Insights /></RequireAuth1>} />
             <Route path="/profile" element={<RequireAuth1><Profile /></RequireAuth1>} />
           </Routes>
-        </AuthProvider>
       </QueryClientProvider>
     </RecoilRoot>
   );

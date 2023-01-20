@@ -1,8 +1,8 @@
 import { useParams } from "react-router";
 import { useMoviesData } from "../hooks/useMoviesData";
 import { MovieDescription } from "./MovieDescription";
-export const EachMovie = () => {
 
+export const EachMovie = () => {
     const mapping = { 'thriller': 0, 'romance': 1, 'horror': 2, 'action': 3, 'comedy': 4 }
     const thing = useParams().id;
     const arr = thing.split('-')
