@@ -26,24 +26,16 @@ export const AddToWatchList = ({ props }) => {
     }
 
     const removeFromWatchList = () => {
-        console.log(idx)
         newWatchList = [...moviesInWatchList.slice(0, idx), ...moviesInWatchList.slice(idx + 1)]
         setMoviesInWatchList(newWatchList)
         localStorage.setItem(localStorage.getItem('email'), JSON.stringify(newWatchList))
     }
-    if (movieInWatchList) {
-        return (
-            <div className='add-to-watchlist-button' onClick={removeFromWatchList}>
-                <div>WatchList</div>
-                <div className='avatar'>✔</div>
-            </div>
-        )
-    } else {
-        return (
-            <div className='add-to-watchlist-button' onClick={addToWatchList}>
-                <div>WatchList</div>
-                <div className='avatar'>+</div>
-            </div>
-        )
-    }
+
+    return (
+        <div className = 'add-to-watchlist-button' onClick={movieInWatchList?removeFromWatchList:addToWatchList}>
+            <div>WatchList</div>
+            {movieInWatchList && <div className = 'avatar'>✔</div>}
+            {!movieInWatchList && <div className = 'avatar'>+</div>}
+        </div>
+    )
 } 

@@ -13,9 +13,9 @@ export const WatchListItem = ({ props }) => {
         newWatchList = [...WatchListItems.slice(0, idx), ...WatchListItems.slice(idx + 1)]
         setWatchListItems(newWatchList)
         localStorage.setItem(localStorage.getItem('email'), JSON.stringify(newWatchList))
-        const cat = props.category;
+        const category = props.category;
         const chartmake = JSON.parse(localStorage.getItem(localStorage.getItem('email') + 'movies'))
-        chartmake[cat] += 1
+        chartmake[category] += 1
         localStorage.setItem(localStorage.getItem('email') + 'movies', JSON.stringify(chartmake))
     }
     return (

@@ -1,5 +1,5 @@
 import './Body.css'
-import { Options } from './Options'
+import { BodyFooter } from './BodyFooter'
 
 export const Body = () => {
     return (
@@ -12,7 +12,7 @@ export const Body = () => {
                     Dwell into any emotion.We got you covered with the very best movies recommendations for any mood or feeling.
                 </p>
             </div>
-            <Options />
+            <BodyFooter />
         </>
     )
 }
