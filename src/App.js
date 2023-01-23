@@ -9,8 +9,8 @@ import { QueryClientProvider, QueryClient } from 'react-query'
 import { RecoilRoot } from 'recoil'
 import { Profile } from './components/Profile';
 import { Insights } from './components/Insights';
-import { RequireAuth1 } from './components/RequireAuth1';
-import { RequireAuth2 } from './components/RequireAuth2';
+import { ProtectedRoute1 } from './components/ProtectedRoute1';
+import { ProtectedRoute2 } from './components/ProtectedRoute2';
 import { EachMovieDescription } from './components/EachMovieDescription';
 
 const queryClient = new QueryClient()
@@ -23,15 +23,15 @@ function App() {
           <NavBar />
           <Routes>
             <Route path='/' element={<Body />} />
-            <Route path="/login" element={<RequireAuth2><LoginPage /></RequireAuth2>} />
-            <Route path="/register" element={<RequireAuth2><RegisterPage /></RequireAuth2>} />
-            <Route path="/home" element={<RequireAuth1><Body /></RequireAuth1>} />
-            <Route path="/movies" element={<RequireAuth1><Movies /></RequireAuth1>} />
-            <Route path="/:category" element={<RequireAuth1><GenrePages /></RequireAuth1>} />
-            <Route path="/:id" element={<RequireAuth1><EachMovieDescription /></RequireAuth1>} />
-            <Route path="/:category/:id" element={<RequireAuth1><EachMovieDescription /></RequireAuth1>} />
-            <Route path="/insights" element={<RequireAuth1><Insights /></RequireAuth1>} />
-            <Route path="/profile" element={<RequireAuth1><Profile /></RequireAuth1>} />
+            <Route path="/login" element={<ProtectedRoute2><LoginPage /></ProtectedRoute2>} />
+            <Route path="/register" element={<ProtectedRoute2><RegisterPage /></ProtectedRoute2>} />
+            <Route path="/home" element={<ProtectedRoute1><Body /></ProtectedRoute1>} />
+            <Route path="/movies" element={<ProtectedRoute1><Movies /></ProtectedRoute1>} />
+            <Route path="/:category" element={<ProtectedRoute1><GenrePages /></ProtectedRoute1>} />
+            <Route path="/:id" element={<ProtectedRoute1><EachMovieDescription /></ProtectedRoute1>} />
+            <Route path="/:category/:id" element={<ProtectedRoute1><EachMovieDescription /></ProtectedRoute1>} />
+            <Route path="/insights" element={<ProtectedRoute1><Insights /></ProtectedRoute1>} />
+            <Route path="/profile" element={<ProtectedRoute1><Profile /></ProtectedRoute1>} />
           </Routes>
       </QueryClientProvider>
     </RecoilRoot>

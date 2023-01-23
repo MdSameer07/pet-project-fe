@@ -1,6 +1,5 @@
 import { useParams } from "react-router";
 import { useMovieData } from "../hooks/useMovieData";
-import { useMoviesData } from "../hooks/useMoviesData";
 import { MovieDescription } from "./MovieDescription";
 
 export const EachMovieDescription = () => {

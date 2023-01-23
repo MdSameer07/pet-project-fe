@@ -4,7 +4,6 @@ import { Movie } from "./Movie"
 
 export const Movies = () => {
     const { data } = useMoviesData()
-    console.log(data)
     const genres = {0:'thriller-Movies',1:'romance-Movies',2:'horror-Movies',3:'action-Movies',4:'comedy-Movies'}
     const getAllMovies = () =>{
         const allmovies = []
@@ -18,7 +17,7 @@ export const Movies = () => {
         console.log("all movies", allmovies)
         return allmovies
     }
-    const movies = useMemo(()=>getAllMovies())
+    const movies = useMemo(()=>getAllMovies(),data)
     return (
             <div className = 'genre-movies-list'>
                 {movies.map((movie)=>{

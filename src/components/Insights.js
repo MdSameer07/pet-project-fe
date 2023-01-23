@@ -9,6 +9,34 @@ export const Insights = () => {
             data: [chartmake['thriller'], chartmake['horror'], chartmake['action'], chartmake['comedy'], chartmake['romance']]
         }
     ]
+    const options_data = {
+        colors: ['#f99900'],
+        theme: { mode: 'light' },
+        xaxis: {
+            tickPlacement: 'on',
+            categories: ['Thriller', 'Horror', 'Action', 'Comedy', 'Romance'],
+            labels: {
+                style: { fontSize: 20, color: 'f99900' }
+            },
+        },
+        yaxis: {
+            labels: {
+                formatter: (val) => { return val },
+                style: { fontSize: 15, color: '#f99900' }
+            },
+            title: {
+                text: "Number of Movies",
+                style: { fontSize: 20 }
+            }
+        },
+        legend: {
+            show: true,
+            position: 'bottom'
+        },
+        dataLabels: {
+            style: { fontSize: 20 }
+        }
+    }
     return (
         <div className='whole-insights'>
             <div className='heading-style'>
@@ -20,35 +48,7 @@ export const Insights = () => {
                     width={1380}
                     heigth={1000}
                     series={series_data}
-                    options={{
-                        colors: ['#f99900'],
-                        theme: { mode: 'light' },
-                        xaxis: {
-                            tickPlacement: 'on',
-                            categories: ['Thriller', 'Horror', 'Action', 'Comedy', 'Romance'],
-                            labels: {
-                                style: { fontSize: 20, color: 'f99900' }
-                            },
-                        },
-                        yaxis: {
-                            labels: {
-                                formatter: (val) => { return val },
-                                style: { fontSize: 15, color: '#f99900' }
-                            },
-                            title: {
-                                text: "Number of Movies",
-                                style: { fontSize: 20 }
-                            }
-                        },
-                        legend: {
-                            show: true,
-                            position: 'bottom'
-                        },
-                        dataLabels: {
-                            style: { fontSize: 20 }
-                        }
-                    }}>
-
+                    options={options_data}>
                 </Chart>
             </div>
             <div className='footer'>
