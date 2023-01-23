@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import './RegisterForm.css'
 import { NavLink, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from "../Firebase";
+import { auth } from "../firebase";
 import { WatchListRecoil } from "../Recoil/WatchListRecoil";
 import { useRecoilState } from "recoil";
 
