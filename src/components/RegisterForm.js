@@ -14,8 +14,6 @@ export const RegisterForm = () => {
     const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false)
     const [WatchList, setWatchList] = useRecoilState(WatchListRecoil)
 
-    console.log(WatchList)
-
     const formInitialSchema = {
         name: '',
         email: '',

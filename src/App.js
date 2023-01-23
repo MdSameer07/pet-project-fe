@@ -5,13 +5,13 @@ import { LoginPage } from './components/LoginPage'
 import { RegisterPage } from './components/RegisterPage'
 import { GenrePages } from './components/GenrePages';
 import { Movies } from './components/Movies';
-import { EachMovie } from './components/EachMovie';
 import { QueryClientProvider, QueryClient } from 'react-query'
 import { RecoilRoot } from 'recoil'
 import { Profile } from './components/Profile';
 import { Insights } from './components/Insights';
 import { RequireAuth1 } from './components/RequireAuth1';
 import { RequireAuth2 } from './components/RequireAuth2';
+import { EachMovieDescription } from './components/EachMovieDescription';
 
 const queryClient = new QueryClient()
 
@@ -28,8 +28,8 @@ function App() {
             <Route path="/home" element={<RequireAuth1><Body /></RequireAuth1>} />
             <Route path="/movies" element={<RequireAuth1><Movies /></RequireAuth1>} />
             <Route path="/:category" element={<RequireAuth1><GenrePages /></RequireAuth1>} />
-            <Route path="/:id" element={<RequireAuth1><EachMovie /></RequireAuth1>} />
-            <Route path="/:category/:id" element={<RequireAuth1><EachMovie /></RequireAuth1>} />
+            <Route path="/:id" element={<RequireAuth1><EachMovieDescription /></RequireAuth1>} />
+            <Route path="/:category/:id" element={<RequireAuth1><EachMovieDescription /></RequireAuth1>} />
             <Route path="/insights" element={<RequireAuth1><Insights /></RequireAuth1>} />
             <Route path="/profile" element={<RequireAuth1><Profile /></RequireAuth1>} />
           </Routes>

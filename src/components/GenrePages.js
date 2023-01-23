@@ -5,7 +5,7 @@ import './Movies.css'
 
 export const GenrePages = () => {
     const category = useParams().category;
-    const cat = category + '-Movies'
+    const categoryMovies = category + '-Movies'
     const mapping = { 'thriller': 0, 'romance': 1, 'horror': 2, 'action': 3, 'comedy': 4 }
     const { isLoading, data, isError, error } = useMoviesData()
     if (isLoading) {
@@ -16,7 +16,7 @@ export const GenrePages = () => {
     }
     return (
         <div className='genre-movies-list'>
-            {data.data[mapping[category]][cat].map((movie) => {
+            {data.data[mapping[category]][categoryMovies].map((movie) => {
                 return (
                     <Movie data={movie} />
                 )

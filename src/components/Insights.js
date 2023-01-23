@@ -3,6 +3,12 @@ import './Insights.css'
 
 export const Insights = () => {
     const chartmake = JSON.parse(localStorage.getItem(localStorage.getItem('email') + 'movies'))
+    const series_data = [
+        {
+            name: 'Insights',
+            data: [chartmake['thriller'], chartmake['horror'], chartmake['action'], chartmake['comedy'], chartmake['romance']]
+        }
+    ]
     return (
         <div className='whole-insights'>
             <div className='heading-style'>
@@ -13,12 +19,7 @@ export const Insights = () => {
                     type='bar'
                     width={1380}
                     heigth={1000}
-                    series={[
-                        {
-                            name: 'Insights',
-                            data: [chartmake['thriller'], chartmake['horror'], chartmake['action'], chartmake['comedy'], chartmake['romance']]
-                        }
-                    ]}
+                    series={series_data}
                     options={{
                         colors: ['#f99900'],
                         theme: { mode: 'light' },

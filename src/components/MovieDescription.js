@@ -1,4 +1,4 @@
-import { Image1 } from './Image1'
+import { ImageComponent } from './ImageComponent'
 import './MovieDescription.css'
 import React from 'react';
 import { Descriptions } from 'antd';
@@ -8,7 +8,7 @@ export const MovieDescription = (movie) => {
     return (
         <>
             <div className='descp-image'>
-                <Image1 id={movie.movie.id} src={movie.movie.image} alt={movie.movie.description} width='69%' height='500px' />
+                <ImageComponent id={movie.movie.id} src={movie.movie.image} alt={movie.movie.description} width='69%' height='500px' />
             </div>
             <div className='whole-description'>
                 <div className='movie-description'>
