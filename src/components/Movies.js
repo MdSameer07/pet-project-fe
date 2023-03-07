@@ -14,7 +14,6 @@ export const Movies = () => {
                 allmovies.push(data.data[i][genres[i]][j])
             }
         }
-        console.log("all movies", allmovies)
         return allmovies
     }
     const movies = useMemo(()=>getAllMovies(),data)
