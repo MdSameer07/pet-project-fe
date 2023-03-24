@@ -3,11 +3,24 @@ import { ImageComponent } from "./ImageComponent"
 import { Description } from "./Description"
 import './Movie.css'
 
-export const Movie = (movie) => {
+export const Movie = ({data,onDelete}) => {
+    console.log(data.id)
+    const userLoggedIn = localStorage.getItem('userLoggedIn')
+    const adminLoggedIn = localStorage.getItem('adminLoggedIn')
+    const handleDelete = () =>{
+        console.log("Reached mid Point")
+        onDelete(data.id)
+    }
     return (
-        <NavLink className='single-movie' to={movie.data.name.replaceAll(' ', '') + '-' + (movie.data.category) + '-' + (movie.data.id)}>
-            <ImageComponent id={movie.data.id} src={movie.data.image} alt={movie.data.description} height='300px' width='100%' />
-            <Description name={movie.data.name} rating={movie.data.rating} />
-        </NavLink>
+        <>
+        {userLoggedIn && <NavLink className='single-movie' to={data.name.replaceAll(' ', '') + '-' + (data.id)}>
+            <ImageComponent id={data.id} src={data.image} alt={data.description} height='300px' width='100%' />
+            <Description name={data.name} rating={data.rating} />
+        </NavLink>}
+        {adminLoggedIn && <div className = 'single-movie'>
+            <ImageComponent id={data.id} src={data.image} alt={data.description} height='300px' width='100%'/>
+            <Description id = {data.id} name = {data.name} rating={data.rating} onDelete={handleDelete}/>
+            </div>}
+        </>
     )
 }

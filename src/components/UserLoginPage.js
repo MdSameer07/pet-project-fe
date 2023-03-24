@@ -1,12 +1,12 @@
 import './LoginPage.css'
-import { LoginForm } from './LoginForm';
+import { UserLoginForm } from './UserLoginForm';
 
-export const LoginPage = () => {
+export const UserLoginPage = () => {
     return (
-        <div className='login-page'>
+        <div className='user-login-page'>
             <div className='login-form-outer'>
                 <div className='login-heading'>Welcome</div>
-                <LoginForm />
+                <UserLoginForm />
             </div>
         </div>
     )

@@ -1,9 +1,9 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
 
-export const ProtectedRoute1 = ({ children }) => {
+export const ProtectedRoute3 = ({ children }) => {
   const location = useLocation();
-  const login = localStorage.getItem('userLoggedIn')
+  const login = localStorage.getItem('adminLoggedIn')
   if (!login) {
     return <Navigate to="/" state={{ path: location.pathname }} />;
   }

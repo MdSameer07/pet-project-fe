@@ -31,3 +31,18 @@ h4{
     font-size:17px;
     color:darkgreen;
 }
+
+.remove-button{
+    display:flex;
+    justify-content: center;
+    position: relative;
+    top:-10px
+}
+
+.delete-button{
+    padding:5px 10px 5px 10px;
+    font-size: 17px;
+    background-color: rgb(227, 40, 40);
+    color: whitesmoke;
+    cursor : pointer
+}

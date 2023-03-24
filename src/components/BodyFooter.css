@@ -43,3 +43,14 @@
     margin-left:4%;
     font-size:49px;
 }
+
+.feedback-section{
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+}
+
+.body-feedback{
+    margin-left:4%;
+    font-size: 30px;
+}

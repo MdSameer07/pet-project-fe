@@ -3,16 +3,16 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as yup from 'yup';
 import './LoginForm.css'
 import { NavLink, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
-import { WatchListRecoil } from "../Recoil/WatchListRecoil";
-import { useRecoilState } from "recoil";
+// import { signInWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "../firebase";
+// import { WatchListRecoil } from "../Recoil/WatchListRecoil";
+// import { useRecoilState } from "recoil";
 
-export const LoginForm = () => {
+export const UserLoginForm = () => {
     const navigate = useNavigate();
     const [errorMsg, setErrorMsg] = useState("")
     const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false)
-    const [watchList, setWatchList] = useRecoilState(WatchListRecoil)
+    // const [watchList, setWatchList] = useRecoilState(WatchListRecoil)
 
     const formInitialSchema = {
         email: '',
@@ -26,18 +26,74 @@ export const LoginForm = () => {
             "Must Contain One Uppercase, One Lowercase, One Number and One Special Case Character"),
     });
 
-    const handleFormSubmit = (values) => {
+    // const handleFormSubmit = (values) => {
+    //     setSubmitButtonDisabled(true)
+    //     signInWithEmailAndPassword(auth, values.email, values.password).then(res => {
+    //         setSubmitButtonDisabled(false)
+    //         localStorage.setItem('email', values.email)
+    //         localStorage.setItem('isLoggedIn', true)
+    //         setWatchList(JSON.parse(localStorage.getItem('' + values.email)))
+    //         navigate('/home')
+    //     }).catch(err => {
+    //         setErrorMsg(err.message)
+    //         setSubmitButtonDisabled(false)
+    //     })
+    // }
+
+    // const handleFormSubmit = (values) => {
+    //     setSubmitButtonDisabled(true)
+    //     const reqBody = {
+    //         email : String(values.email),
+    //         password : String(values.password)
+    //     }
+    //     fetch('user/login',{
+    //         method : 'POST',
+    //         headers : {
+    //             'Content-Type' : 'application/json',
+    //         },
+    //         body : JSON.stringify(reqBody)
+    //     }).then(response=>{
+    //         if (response.status!=200){
+    //             setErrorMsg("Error while logging in")
+    //             return
+    //         }
+    //         navigate('/home')
+    //         localStorage.setItem('isLoggedIn',true)
+    //         localStorage.setItem('userLoggedIn', true)
+    //         // localStorage.setItem('userId',)
+    //         // setWatchList(JSON.parse(localStorage.getItem('' + values.email)))
+    //     }).catch(err=>{
+    //         setErrorMsg(err.message)
+    //     }).finally(()=>{
+    //         setSubmitButtonDisabled(false)
+    //     })
+    // }
+
+    const handleFormSubmit = async (values) =>{
         setSubmitButtonDisabled(true)
-        signInWithEmailAndPassword(auth, values.email, values.password).then(res => {
-            setSubmitButtonDisabled(false)
-            localStorage.setItem('email', values.email)
-            localStorage.setItem('isLoggedIn', true)
-            setWatchList(JSON.parse(localStorage.getItem('' + values.email)))
-            navigate('/home')
-        }).catch(err => {
-            setErrorMsg(err.message)
-            setSubmitButtonDisabled(false)
+        const reqBody = {
+            email : String(values.email),
+            password : String(values.password)
+        }
+
+        const response = await fetch('user/login',{
+            method : "POST",
+            headers : {
+                'Content-Type' : 'application/json',
+            },
+            body : JSON.stringify(reqBody)
         })
+        if (response.status!=200){
+            setErrorMsg("Error while Logging In")
+            setSubmitButtonDisabled(false)
+            return
+        }
+        const output = await response.json()
+        navigate('/home')
+        localStorage.setItem('isLoggedIn',true)
+        localStorage.setItem('userLoggedIn',true)
+        localStorage.setItem('userId',output.id)
+        setSubmitButtonDisabled(false)
     }
 
     return (
